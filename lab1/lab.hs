@@ -48,6 +48,25 @@ impar :: [Integer] -> [Integer]
 impar [] = []
 impar (x:xs) = if (mod x 2) == 0 then (impar xs) else impar (delete x xs)
 -- exercitiul 16
+conver :: [Bool] -> [Integer]
+conver a = convi a []
+        where 
+            convi [] b = rev b
+            convi (x:xs) b 
+                | x == True = (convi xs (1 : b))
+                | x == False = (convi xs (0 : b))
+                | otherwise = (convi xs (0 : b))
+
 -- exercitiul 17
+--drecu stie mi-e lene
 -- exercitiul 18
+countBool :: [Bool] -> Integer
+countBool a = aux a 0
+        where  
+            aux [] a = a
+            aux (x:xs) count
+                | x == True = aux xs (count+1)
+                | x == False = aux xs (count)
+    
 -- exercitiul 19
+--lene
